@@ -6,3 +6,5 @@
 *.iml
 out
 gen
+META-INF
+*.MF

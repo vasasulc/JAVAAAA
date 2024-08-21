@@ -1,17 +1,16 @@
-package Honza;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
+package Skorpil;
+
+import javax.swing.*;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args){
 
-        ImageIcon image1 = new ImageIcon(Main.class.getResource("/Honza/honza.png"));
-        ImageIcon image2 = new ImageIcon(Main.class.getResource("/Honza/honza2.jpg"));
-        ImageIcon image3 = new ImageIcon(Main.class.getResource("/Honza/honza3.jpg"));
-        ImageIcon image4 = new ImageIcon(Main.class.getResource("/Honza/honza4.jpg"));
+        ImageIcon image1 = new ImageIcon(Main.class.getResource("/Skorpil/Skorp1.png"));
+        ImageIcon image2 = new ImageIcon(Main.class.getResource("/Skorpil/Skorp2.png"));
+        ImageIcon image3 = new ImageIcon(Main.class.getResource("/Skorpil/Skorp3.jpeg"));
+        ImageIcon image4 = new ImageIcon(Main.class.getResource("/Skorpil/Skorp4.png"));
         JLabel label = new JLabel();
         Random random = new Random();
 
