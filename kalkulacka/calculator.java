@@ -28,7 +28,7 @@ public class calculator implements ActionListener {
 
         textField = new JTextField();
         textField.setBounds(50,25, 300, 50);
-        textField.setFont(font);
+        textField.setFont(new Font("Monospaced", Font.BOLD, 40));
         textField.setForeground(Color.WHITE);
         textField.setEditable(false);
         textField.setBackground(Color.black);
