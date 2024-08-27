@@ -58,6 +58,7 @@ public class calculator implements ActionListener {
             functionButtons[i].setFocusable(false);
             functionButtons[i].setBackground(new Color(255, 171, 0));
             functionButtons[i].setForeground(Color.WHITE);
+            functionButtons[i].setBorder(javax.swing.BorderFactory.createEmptyBorder());
         }
 
         for (int i = 0; i < 10; i++){
@@ -67,6 +68,7 @@ public class calculator implements ActionListener {
             numberButtons[i].setFocusable(false);
             numberButtons[i].setBackground(Color.DARK_GRAY);
             numberButtons[i].setForeground(Color.WHITE);
+            numberButtons[i].setBorder(javax.swing.BorderFactory.createEmptyBorder());
         }
 
         del.setBounds(50, 430, 145, 50);
