@@ -104,7 +104,7 @@ public class calculator implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) throws NumberFormatException {
         for (int i = 0; i < 10; i++){
             if(e.getSource() == numberButtons[i]){
                 textField.setText(textField.getText().concat(String.valueOf(i)));
@@ -114,55 +114,59 @@ public class calculator implements ActionListener {
         if (e.getSource() == dec){
             textField.setText(textField.getText().concat("."));
         }
-
-        if (e.getSource() == add){
-            num1 = Double.parseDouble(textField.getText());
-            operator = '+';
-            textField.setText("");
-        }
-
-        if (e.getSource() == sub){
-            num1 = Double.parseDouble(textField.getText());
-            operator = '-';
-            textField.setText("");
-        }
-
-        if (e.getSource() == mul){
-            num1 = Double.parseDouble(textField.getText());
-            operator = '*';
-            textField.setText("");
-        }
-
-        if (e.getSource() == div){
-            num1 = Double.parseDouble(textField.getText());
-            operator = '/';
-            textField.setText("");
-        }
-
-        if (e.getSource() == equ){
-            num2 = Double.parseDouble(textField.getText());
-            switch (operator){
-
-                case '+': result = num1 + num2;
-                    textField.setText(String.valueOf(result));
-                break;
-                case '-': result = num1 - num2;
-                    textField.setText(String.valueOf(result));
-                break;
-                case '*': result = num1 * num2;
-                    textField.setText(String.valueOf(result));
-                break;
-                case '/':
-                    if (num2 == 0.0)
-                    {
-                        textField.setText("Cant divide by zero");
-                        break;
-                    }
-                    result = num1 / num2;
-                    textField.setText(String.valueOf(result));
-                break;
+        try {
+            if (e.getSource() == add) {
+                num1 = Double.parseDouble(textField.getText());
+                operator = '+';
+                textField.setText("");
             }
-            num1 = result;
+
+            if (e.getSource() == sub) {
+                num1 = Double.parseDouble(textField.getText());
+                operator = '-';
+                textField.setText("");
+            }
+
+            if (e.getSource() == mul) {
+                num1 = Double.parseDouble(textField.getText());
+                operator = '*';
+                textField.setText("");
+            }
+
+            if (e.getSource() == div) {
+                num1 = Double.parseDouble(textField.getText());
+                operator = '/';
+                textField.setText("");
+            }
+
+            if (e.getSource() == equ){
+                num2 = Double.parseDouble(textField.getText());
+                switch (operator){
+
+                    case '+': result = num1 + num2;
+                        textField.setText(String.valueOf(result));
+                    break;
+                    case '-': result = num1 - num2;
+                        textField.setText(String.valueOf(result));
+                    break;
+                    case '*': result = num1 * num2;
+                        textField.setText(String.valueOf(result));
+                    break;
+                    case '/':
+                        if (num2 == 0.0)
+                        {
+                            textField.setText("Cant divide by zero");
+                            break;
+                        }
+                            result = num1 / num2;
+                        textField.setText(String.valueOf(result));
+                    break;
+                }
+                num1 = result;
+            }
+
+        } catch (NumberFormatException ex) {
+            System.out.println("Write a number!");
         }
 
         if (e.getSource() == clr){
